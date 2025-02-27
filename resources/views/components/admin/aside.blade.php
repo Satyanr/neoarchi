@@ -32,6 +32,30 @@
                       <span class="hide-menu">Artikel</span>
                   </a>
               </li>
+              <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('admin.projek') }}" aria-expanded="false">
+                    <span>
+                        <i class="ti ti-layout-dashboard"></i>
+                    </span>
+                    <span class="hide-menu">Projek</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('admin.kategori') }}" aria-expanded="false">
+                    <span>
+                        <i class="ti ti-layout-dashboard"></i>
+                    </span>
+                    <span class="hide-menu">Kategori</span>
+                </a>
+            </li>
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="{{ route('admin.pengguna') }}" aria-expanded="false">
+                    <span>
+                        <i class="ti ti-layout-dashboard"></i>
+                    </span>
+                    <span class="hide-menu">Pengguna</span>
+                </a>
+            </li>
             </ul>
         </nav>
         <!-- End Sidebar navigation -->

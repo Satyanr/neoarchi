@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('category_links', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->constrained()->nullable();
+            $table->foreignId('article_id')->constrained()->nullable();
             $table->timestamps();
         });
     }

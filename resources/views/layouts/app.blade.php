@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="shortcut icon" type="image/png" href="{{ asset('favicon.png') }}" />
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -22,11 +23,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap"
         rel="stylesheet">
 
-    <link href="asset-main/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('asset-main/css/bootstrap.min.css') }}" rel="stylesheet">
 
-    <link href="asset-main/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="{{ asset('asset-main/css/bootstrap-icons.css') }}" rel="stylesheet">
 
-    <link href="asset-main/css/templatemo-topic-listing.css" rel="stylesheet">
+    <link href="{{ asset('asset-main/css/templatemo-topic-listing.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -41,11 +42,10 @@
 
 
     <!-- JAVASCRIPT FILES -->
-    <script src="asset-main/js/jquery.min.js"></script>
-    <script src="asset-main/js/bootstrap.bundle.min.js"></script>
-    <script src="asset-main/js/jquery.sticky.js"></script>
-    <script src="asset-main/js/click-scroll.js"></script>
-    <script src="asset-main/js/custom.js"></script>
+    <script src="{{ asset('asset-main/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('asset-main/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('asset-main/js/jquery.sticky.js') }}"></script>
+    <script src="{{ asset('asset-main/js/custom.js') }}"></script>
 </body>
 
 </html>

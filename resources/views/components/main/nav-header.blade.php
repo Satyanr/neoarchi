@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <i class="bi-back"></i>
-            <span>Topic</span>
+        <a class="navbar-brand" href="#">
+            {{-- <img src="{{asset('BRAND.png')}}" class="image-fluid" alt=""> --}}
         </a>
 
         <div class="d-lg-none ms-auto me-4">
@@ -17,40 +16,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-lg-5 me-lg-auto">
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#section_1">Home</a>
+                    <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#section_2">Browse Topics</a>
+                    <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About US</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#section_3">How it works</a>
+                    <a class="nav-link {{ request()->routeIs('project') ? 'active' : '' }}" href="{{ route('project') }}">Projects</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#section_4">FAQs</a>
+                    <a class="nav-link {{ request()->routeIs('artikel') ? 'active' : '' }}" href="{{ route('artikel') }}">News</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link click-scroll" href="#section_5">Contact</a>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
-
-                    <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
-                        <li><a class="dropdown-item" href="topics-listing.html">Topics Listing</a></li>
-
-                        <li><a class="dropdown-item" href="contact.html">Contact Form</a></li>
-                    </ul>
+                    <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a>
                 </li>
             </ul>
-
-            <div class="d-none d-lg-block">
-                <a href="#top" class="navbar-icon bi-person smoothscroll"></a>
-            </div>
         </div>
     </div>
 </nav>

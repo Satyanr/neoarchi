@@ -1,11 +1,10 @@
-<footer class="site-footer section-padding">
+<footer class="site-footer section-padding" style="background-color: #D84040">
     <div class="container">
         <div class="row">
 
             <div class="col-lg-3 col-12 mb-4 pb-2">
-                <a class="navbar-brand mb-2" href="index.html">
-                    <i class="bi-back"></i>
-                    <span>Topic</span>
+                <a class="navbar-brand mb-2" href="#">
+                    <img src="{{ asset('BRAND.png') }}" class="img-fluid w-50" alt="">
                 </a>
             </div>
 
@@ -14,19 +13,21 @@
 
                 <ul class="site-footer-links">
                     <li class="site-footer-link-item">
-                        <a href="#" class="site-footer-link">Home</a>
+                        <a href="{{ route('home') }}" class="site-footer-link">Home</a>
                     </li>
 
                     <li class="site-footer-link-item">
-                        <a href="#" class="site-footer-link">How it works</a>
+                        <a href="{{ route('about') }}" class="site-footer-link">About Us</a>
                     </li>
 
                     <li class="site-footer-link-item">
-                        <a href="#" class="site-footer-link">FAQs</a>
+                        <a href="{{ route('project') }}" class="site-footer-link">Projects</a>
                     </li>
-
                     <li class="site-footer-link-item">
-                        <a href="#" class="site-footer-link">Contact</a>
+                        <a href="{{ route('artikel') }}" class="site-footer-link">News</a>
+                    </li>
+                    <li class="site-footer-link-item">
+                        <a href="{{ route('contact') }}" class="site-footer-link">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -35,37 +36,21 @@
                 <h6 class="site-footer-title mb-3">Information</h6>
 
                 <p class="text-white d-flex mb-1">
-                    <a href="tel: 305-240-9671" class="site-footer-link">
-                        305-240-9671
+                    <a href="https://wa.me/6281214158256" class="site-footer-link">
+                        +62 812-1415-8256
                     </a>
                 </p>
 
                 <p class="text-white d-flex">
-                    <a href="mailto:info@company.com" class="site-footer-link">
-                        info@company.com
+                    <a href="mailto:marcomm@visitiga.com" class="site-footer-link">
+                        marcomm@visitiga.com
                     </a>
                 </p>
             </div>
 
             <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        English</button>
-
-                    <ul class="dropdown-menu">
-                        <li><button class="dropdown-item" type="button">Thai</button></li>
-
-                        <li><button class="dropdown-item" type="button">Myanmar</button></li>
-
-                        <li><button class="dropdown-item" type="button">Arabic</button></li>
-                    </ul>
-                </div>
-
-                <p class="copyright-text mt-lg-5 mt-4">Copyright © 2048 Topic Listing Center. All rights reserved.
-                    <br><br>Design: <a rel="nofollow" href="https://templatemo.com"
-                        target="_blank">TemplateMo</a> Distribution <a
-                        href="https://themewagon.com">ThemeWagon</a>
+                <p class="copyright-text mt-lg-5 mt-4" style="color: white">
+                    Copyright © {{date('Y')}} NEO ARCH. All rights reserved.
                 </p>
 
             </div>

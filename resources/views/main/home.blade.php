@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+    {{-- <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
         <div class="container">
             <div class="row">
 
@@ -664,5 +664,5 @@
 
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection

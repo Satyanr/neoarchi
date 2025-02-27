@@ -10,16 +10,16 @@ https://templatemo.com/tm-590-topic-listing
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/
 :root {
-  --white-color:                  #ffffff;
-  --primary-color:                #13547a;
-  --secondary-color:              #80d0c7;
-  --section-bg-color:             #f0f8ff;
-  --custom-btn-bg-color:          #80d0c7;
-  --custom-btn-bg-hover-color:    #13547a;
-  --dark-color:                   #000000;
-  --p-color:                      #717275;
-  --border-color:                 #7fffd4;
-  --link-hover-color:             #13547a;
+  --white-color:                  #EEEEEE;
+  --primary-color:                #8E1616;
+  --secondary-color:              #1D1616;
+  --section-bg-color:             #EEEEEE;
+  --custom-btn-bg-color:          #8E1616;
+  --custom-btn-bg-hover-color:    #D84040;
+  --dark-color:                   #1D1616;
+  --p-color:                      #8f8686;
+  --border-color:                 #8E1616;
+  --link-hover-color:             #8E1616;
 
   --body-font-family:             'Open Sans', sans-serif;
   --title-font-family:            'Montserrat', sans-serif;
@@ -248,7 +248,7 @@ strong {
   SITE HEADER              
 -----------------------------------------*/
 .site-header {
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  background-image: linear-gradient(15deg, #EEEEEE 0%, #8E1616 100%);
   padding-top: 150px;
   padding-bottom: 80px;
 }
@@ -945,7 +945,7 @@ blockquote {
 }
 
 .site-footer-title {
-  color: var(--primary-color); 
+  color: var(--white-color); 
 }
 
 .site-footer .dropdown-menu {
@@ -993,7 +993,9 @@ blockquote {
 }
 
 .site-footer-link {
-  color: var(--secondary-color);
+  color: var(--white-color);
+  /* hover color  */
+  
   font-size: var(--copyright-font-size);
   font-weight: var(--font-weight-medium);
   line-height: normal;

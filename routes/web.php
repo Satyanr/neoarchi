@@ -20,7 +20,14 @@ use App\Http\Controllers\MainController;
 
 Auth::routes();
 
-Route::get('/', [MainController::class, 'index'])->name('home');
+Route::controller (MainController::class)->group(function () {
+    Route::get('/', 'index')->name('home');
+    Route::get('/artikel', 'artikel')->name('artikel');
+    Route::get('/about', 'about')->name('about');
+    Route::get('/project', 'project')->name('project');
+    Route::get('/contact', 'contact')->name('contact');
+});
+
 Route::prefix('/admin')->group(function () {
     Route::controller(ArtikelController::class)->group(function () {
         Route::get('/artikel/show', 'index')->name('admin.artikel.show');

@@ -19,6 +19,9 @@ use App\Http\Controllers\MainController;
 Auth::routes();
 
 Route::get('/', [MainController::class, 'index'])->name('home');
-Route::controller(HomeController::class)->group(function () {
-    Route::get('/admin', [HomeController::class, 'index'])->name('admin');
+Route::prefix('/admin')->group(function () {
+    Route::controller(HomeController::class)->group(function () {
+        Route::get('/', [HomeController::class, 'index'])->name('admin');
+        Route::get('/artikel', [HomeController::class, 'artikel'])->name('admin.artikel');
+    });
 });

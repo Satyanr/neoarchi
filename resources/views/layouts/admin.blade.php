@@ -5,8 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard Admin</title>
-    <link rel="shortcut icon" type="image/png" href="asset-admin/images/logos/favicon.png" />
-    <link rel="stylesheet" href="asset-admin/css/styles.min.css" />
+    <link rel="shortcut icon" type="image/png" href="{{asset('asset-admin/images/logos/favicon.png')}}" />
+    <link rel="stylesheet" href="{{ asset('asset-admin/css/styles.min.css')}}" />
+    @livewireStyles
+    @stack('css')
 </head>
 
 <body>
@@ -27,13 +29,15 @@
             </div>
         </div>
     </div>
-    <script src="asset-admin/libs/jquery/dist/jquery.min.js"></script>
-    <script src="asset-admin/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="asset-admin/js/sidebarmenu.js"></script>
-    <script src="asset-admin/js/app.min.js"></script>
-    <script src="asset-admin/libs/apexcharts/dist/apexcharts.min.js"></script>
-    <script src="asset-admin/libs/simplebar/dist/simplebar.js"></script>
-    <script src="asset-admin/js/dashboard.js"></script>
+    
+    @livewireScripts
+    <script src="{{asset('asset-admin/libs/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{asset('asset-admin/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('asset-admin/js/sidebarmenu.js')}}"></script>
+    <script src="{{asset('asset-admin/js/app.min.js')}}"></script>
+    <script src="{{asset('asset-admin/libs/apexcharts/dist/apexcharts.min.js')}}"></script>
+    <script src="{{asset('asset-admin/libs/simplebar/dist/simplebar.js')}}"></script>
+    <script src="{{asset('asset-admin/js/dashboard.js')}}"></script>
 </body>
 
 </html>

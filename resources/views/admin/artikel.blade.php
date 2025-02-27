@@ -2,6 +2,6 @@
 
 @section('content')
 
-    @livewire('admin.index')
+    @livewire('admin.artikel-komponent')
     
 @endsection

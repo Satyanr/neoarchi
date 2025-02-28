@@ -9,4 +9,9 @@ class Article extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
+    public function category()
+    {
+        return $this->belongsToMany(Category::class, 'category_links');
+    }
 }

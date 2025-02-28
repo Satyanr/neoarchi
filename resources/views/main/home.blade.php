@@ -166,7 +166,7 @@
                     @foreach ($projects as $project)
                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                             <div class="custom-block bg-white shadow-lg">
-                                <a href="topics-detail.html">
+                                <a href="{{ route('showProject', $project->id) }}">
                                     <div class="d-flex">
                                         <div>
                                             <h5 class="mb-2">{{ $project->name }}</h5>
@@ -199,7 +199,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <a href="javascript:void(0)" class="btn btn-danger">CONTACT US NOW <i
+                        <a href="{{route('contact')}}" class="btn btn-danger">CONTACT US NOW <i
                                 class="bi bi-envelope"></i></a>
                     </div>
                 </div>
@@ -218,7 +218,7 @@
                     @foreach ($artikels as $article)
                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                             <div class="custom-block bg-white shadow-lg">
-                                <a href="topics-detail.html">
+                                <a href="{{ route('showArticle', $article->id) }}">
                                     <div class="d-flex">
                                         <div>
                                             <h5 class="mb-2">{{ $article->title }}</h5>

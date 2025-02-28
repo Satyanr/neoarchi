@@ -26,7 +26,7 @@ class MainController extends Controller
     {
         return view('main.about-us', [
             'pageTitle' => 'About Us',
-            'artikels' => Article::latest()->limit(3)->get(),
+            'projects' => Project::latest()->limit(3)->get(),
         ]);
     }
 

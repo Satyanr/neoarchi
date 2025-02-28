@@ -59,21 +59,19 @@
         <div class="row">
             <div class="col py-3">
                 <div class="custom-block bg-white shadow-lg">
-                    <img src="..." class="card-img-top" alt="...">
+                    {{-- <img src="..." class="card-img-top" alt="..."> --}}
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of the
-                            card's content.</p>
+                        <h3>Persistence</h3>
+                        <p class="card-text">Be persistent in keeping with an entrepreneurial attitude.</p>
                     </div>
                 </div>
             </div>
             <div class="col py-3">
                 <div class="custom-block bg-white shadow-lg">
-                    <img src="..." class="card-img-top" alt="...">
+                    {{-- <img src="..." class="card-img-top" alt="..."> --}}
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of the
-                            card's content.</p>
+                        <h3>Stewardship</h3>
+                        <p class="card-text">Continually look for ways to improve profitability and sustainability.</p>
                     </div>
                 </div>
             </div>
@@ -81,21 +79,20 @@
         <div class="row">
             <div class="col py-3">
                 <div class="custom-block bg-white shadow-lg">
-                    <img src="..." class="card-img-top" alt="...">
+                    {{-- <img src="..." class="card-img-top" alt="..."> --}}
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of the
-                            card's content.</p>
+                        <h3>Service</h3>
+                        <p class="card-text">Give our customers the best service and work hard to make a fair relationship.
+                        </p>
                     </div>
                 </div>
             </div>
             <div class="col py-3">
                 <div class="custom-block bg-white shadow-lg">
-                    <img src="..." class="card-img-top" alt="...">
+                    {{-- <img src="..." class="card-img-top" alt="..."> --}}
                     <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                            of the
-                            card's content.</p>
+                        <h3>Integrity</h3>
+                        <p class="card-text">strive to always do the right thing; be honest.</p>
                     </div>
                 </div>
             </div>
@@ -106,19 +103,16 @@
             </div>
         </div>
         <div class="row p-3">
-            @foreach ($artikels as $article)
+            @foreach ($projects as $project)
                 <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                     <div class="custom-block bg-white shadow-lg">
-                        <a href="topics-detail.html">
+                        <a href="{{route('showProject', $project->id)}}">
                             <div class="d-flex">
                                 <div>
-                                    <h5 class="mb-2">{{ $article->title }}</h5>
-                                    <p>
-                                        {{ Str::limit($article->description, 100, '...') }}
-                                    </p>
+                                    <h5 class="mb-2">{{ $project->name }}</h5>
                                 </div>
                             </div>
-                            <img src="{{ asset('ArtikelImages/' . $article->thumbnail) }}"
+                            <img src="{{ asset('ProjectImages/' . $project->thumbnail) }}"
                                 class="custom-block-image img-fluid" alt="">
                         </a>
                     </div>
@@ -131,7 +125,7 @@
             <div class="col">
                 <h4>Hurry up! Contact us today</h4>
                 <h2>FOR CONSULTATION ADVERTISING PROJECT</h2>
-                <button type="button" class="btn btn-danger btn-lg">CONTACT US TODAY!</button>
+                <a href="{{route('contact')}}" class="btn btn-danger btn-lg">CONTACT US TODAY!</a>
             </div>
         </div>
     </div>

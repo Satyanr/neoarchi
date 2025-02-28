@@ -24,13 +24,16 @@
     <div class="row justify-content-center">
         @forelse ($projects as $project)
             <div class="col-auto p-3">
-                <div class="custom-block bg-white shadow-lg" style="width: 18rem;">
-                    <img src="{{ asset('ProjectImages/' . $project->thumbnail) }}" class="card-img-top"
-                        style="min-height: 200px; max-height: 200px; object-fit: contain; width: 100%;" alt="...">
-                    <div class="card-body">
-                        <p class="card-text">{{ $project->name }}</p>
+                <a href="{{ route('showProject', $project->id) }}">
+                    <div class="custom-block bg-white shadow-lg" style="width: 18rem;">
+                        <img src="{{ asset('ProjectImages/' . $project->thumbnail) }}" class="card-img-top"
+                            style="min-height: 200px; max-height: 200px; object-fit: contain; width: 100%;"
+                            alt="...">
+                        <div class="card-body">
+                            <p class="card-text">{{ $project->name }}</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         @empty
             <p>No projects available.</p>

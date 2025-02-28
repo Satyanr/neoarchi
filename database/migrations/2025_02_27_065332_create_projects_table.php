@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('slug')->nullable();
             $table->text('description')->nullable();
             $table->string('thumbnail')->nullable();
-            $table->enum('status', ['draft', 'published']);
+            $table->enum('status', ['draft', 'published'])->default('draft');
             $table->string('category')->nullable();
             $table->foreignId('user_id')->nullable()->constrained();
             $table->timestamps();

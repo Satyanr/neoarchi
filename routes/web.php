@@ -26,6 +26,8 @@ Route::controller (MainController::class)->group(function () {
     Route::get('/about', 'about')->name('about');
     Route::get('/project', 'project')->name('project');
     Route::get('/contact', 'contact')->name('contact');
+    Route::get('/artikel/{id}', 'showArticle')->name('showArticle');
+    Route::get('/project/{id}', 'showProject')->name('showProject');
 });
 
 Route::prefix('/admin')->group(function () {

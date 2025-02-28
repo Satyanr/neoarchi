@@ -43,8 +43,8 @@
         </div>
     </section>
     <div class="container-fluid bg-dark">
-        <div class="row text-center p-5">
-            <div class="col">
+        <div class="row text-center py-5">
+            <div class="col-sm mb-3">
                 <div class="row">
                     <div class="col">
                         <h5 class="text-white"><i class="bi bi-text-indent-left"></i></h5>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-sm mb-3">
                 <div class="row">
                     <div class="col">
                         <h5 class="text-white"><i class="bi bi-people"></i></h5>
@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-sm mb-3">
                 <div class="row">
                     <div class="col">
                         <h5 class="text-white"><i class="bi bi-arrows-fullscreen"></i></h5>
@@ -80,7 +80,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-sm mb-3">
                 <div class="row">
                     <div class="col">
                         <h5 class="text-white"><i class="bi bi-telephone"></i></h5>
@@ -95,8 +95,8 @@
         </div>
     </div>
     <div class="container">
-        <div class="row p-5">
-            <div class="col">
+        <div class="row py-5">
+            <div class="col-sm">
                 <div class="row">
                     <div class="col">
                         <h6>WELCOME TO NEO ARCHI</h6>
@@ -108,49 +108,44 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <p>Looking to capture your customer’s attention right at the point of sale?
                     DOOH stands for Digital Out of Home. Digital Out of Home Advertising is a fast growing, cost effective
                     solution, that displays ads on a network of screens placed in strategic, high traffic locations offering
                     brands the chance to reach their customers in real time.</p>
             </div>
         </div>
-        <div class="row text-center p-5">
+        <div class="row text-center py-5">
             <div class="col">
                 <h2>Our Service</h2>
                 <div class="row">
-                    <div class="col">
-                        <div class="custom-block custom-block-overlay">
+                    <div class="col-sm mb-3">
+                        <div class="custom-block custom-block-overlay h-100">
                             <div class="d-flex flex-column h-100">
-                                <img src="images/businesswoman-using-tablet-analysis.jpg"
-                                    class="custom-block-image img-fluid" alt="">
-                                <div class="custom-block-overlay-text d-flex">
+                                <img src="{{ asset('BRAND2.png') }}" class="custom-block-image img-fluid" alt="">
+                                <div
+                                    class="custom-block-overlay-text d-flex justify-content-center align-items-center text-center p-3">
                                     <div>
                                         <h5 class="text-white mb-2">Advertising</h5>
-
                                         <p class="text-white">As a full-service advertising agency, we are equipped to serve
-                                            our
-                                            clients in all aspects of communication and promotion.</p>
+                                            our clients in all aspects of communication and promotion.</p>
                                     </div>
                                 </div>
                                 <div class="section-overlay"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="custom-block custom-block-overlay">
+                    <div class="col-sm mb-3">
+                        <div class="custom-block custom-block-overlay h-100">
                             <div class="d-flex flex-column h-100">
-                                <img src="images/businesswoman-using-tablet-analysis.jpg"
-                                    class="custom-block-image img-fluid" alt="">
-                                <div class="custom-block-overlay-text d-flex">
+                                <img src="{{ asset('BRAND2.png') }}" class="custom-block-image img-fluid" alt="">
+                                <div
+                                    class="custom-block-overlay-text d-flex justify-content-center align-items-center text-center p-3">
                                     <div>
                                         <h5 class="text-white mb-2">Digital Media Supply</h5>
-
                                         <p class="text-white">We as Digital Media Supply company specializes in building
-                                            your
-                                            brand by putting your advertising digital media assets to best use reaching out
-                                            to
-                                            targeted audiences and motivating them to act in your favor.</p>
+                                            your brand by putting your advertising digital media assets to best use reaching
+                                            out to targeted audiences and motivating them to act in your favor.</p>
                                     </div>
                                 </div>
                                 <div class="section-overlay"></div>
@@ -160,7 +155,7 @@
                 </div>
             </div>
         </div>
-        <div class="row text-center p-5">
+        <div class="row text-center py-5">
             <div class="col">
                 <div class="row">
                     <div class="col">
@@ -189,8 +184,8 @@
         </div>
     </div>
     <div class="container-fluid bg-dark">
-        <div class="row text-center p-5">
-            <div class="col">
+        <div class="row text-center py-5">
+            <div class="col-sm mb-3">
                 <div class="row">
                     <div class="col">
                         <h5 class="text-white">Need professional advertising solution?</h5>
@@ -211,7 +206,7 @@
             </div>
         </div>
     </div>
-    <div class="container p-5">
+    <div class="container py-5">
         <div class="row text-center">
             <div class="col">
                 <h2>Recent News</h2>
@@ -228,7 +223,7 @@
                                         <div>
                                             <h5 class="mb-2">{{ $article->title }}</h5>
                                             <p>
-                                                {{Str::limit($article->description, 100, '...') }}
+                                                {{ Str::limit($article->description, 100, '...') }}
                                             </p>
                                         </div>
                                     </div>

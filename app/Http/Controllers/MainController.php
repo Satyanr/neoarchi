@@ -24,7 +24,10 @@ class MainController extends Controller
 
     public function about()
     {
-        return view('main.about-us', ['pageTitle' => 'About Us']);
+        return view('main.about-us', [
+            'pageTitle' => 'About Us',
+            'artikels' => Article::latest()->limit(3)->get(),
+        ]);
     }
 
     public function project()

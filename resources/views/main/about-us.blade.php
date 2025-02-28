@@ -106,24 +106,24 @@
             </div>
         </div>
         <div class="row p-3">
-            <div class="col p-3 d-flex justify-content-center">
-                <figure class="figure">
-                    <img src="{{ asset('BRAND2.png') }}" class="figure-img img-fluid rounded" alt="...">
-                    <figcaption class="figure-caption">Outdoor Type S6</figcaption>
-                </figure>
-            </div>
-            <div class="col p-3">
-                <figure class="figure">
-                    <img src="{{ asset('BRAND2.png') }}" class="figure-img img-fluid rounded" alt="...">
-                    <figcaption class="figure-caption">Outdoor Type S6</figcaption>
-                </figure>
-            </div>
-            <div class="col p-3">
-                <figure class="figure">
-                    <img src="{{ asset('BRAND2.png') }}" class="figure-img img-fluid rounded" alt="...">
-                    <figcaption class="figure-caption">Outdoor Type S6</figcaption>
-                </figure>
-            </div>
+            @foreach ($artikels as $article)
+                <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                    <div class="custom-block bg-white shadow-lg">
+                        <a href="topics-detail.html">
+                            <div class="d-flex">
+                                <div>
+                                    <h5 class="mb-2">{{ $article->title }}</h5>
+                                    <p>
+                                        {{ Str::limit($article->description, 100, '...') }}
+                                    </p>
+                                </div>
+                            </div>
+                            <img src="{{ asset('ArtikelImages/' . $article->thumbnail) }}"
+                                class="custom-block-image img-fluid" alt="">
+                        </a>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
     <div class="container text-center mt-5 pb-5">

@@ -22,12 +22,13 @@ Auth::routes();
 
 Route::controller (MainController::class)->group(function () {
     Route::get('/', 'index')->name('home');
-    Route::get('/artikel', 'artikel')->name('artikel');
+    Route::get('/news', 'artikel')->name('artikel');
     Route::get('/about', 'about')->name('about');
     Route::get('/project', 'project')->name('project');
     Route::get('/contact', 'contact')->name('contact');
     Route::get('/artikel/{id}', 'showArticle')->name('showArticle');
     Route::get('/project/{id}', 'showProject')->name('showProject');
+    Route::post('/contact/send', 'sendContact')->name('sendContact');
 });
 
 Route::prefix('/admin')->group(function () {

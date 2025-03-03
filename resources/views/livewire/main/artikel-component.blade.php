@@ -1,18 +1,36 @@
 <div class="container">
     <div class="row">
-        <!-- Sidebar -->
         <div class="col-md-3">
             <div class="card mb-3">
                 <div class="card-body">
                     <h5 class="card-title">Search</h5>
-                    <input type="text" class="form-control" placeholder="Search articles..." wire:model="searchartikel"
-                        wire:input='resetArtikelPage'>
+                    <input type="text" class="form-control" placeholder="Search articles..."
+                        wire:model="searchartikel" wire:input='resetArtikelPage'>
+                </div>
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Categories</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="category" value="All" id="all"
+                            wire:click="setCategory('All')" {{ $selectedCategory === 'All' ? 'checked' : '' }}>
+                        <label class="form-check-label" for="all">
+                            All
+                        </label>
+                    </div>
+                    @foreach ($categories as $category)
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="category" value="{{ $category->name }}"
+                                id="{{ $category->name }}" wire:click="setCategory('{{ $category->name }}')"
+                                {{ $selectedCategory === $category->name ? 'checked' : '' }}>
+                            <label class="form-check-label" for="{{ $category->name }}">
+                                {{ $category->name }}
+                            </label>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <!-- Main content -->
         <div class="col">
             <div class="row">
                 @forelse ($artikels as $artikel)

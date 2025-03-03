@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
-        <div class="container d-flex justify-content-center align-items-center">
-            <div class="row w-75">
+    <section class="hero-section">
+        <div class="container-fluid">
+            <div class="row">
                 <div class="col">
-                    <div id="headcoursel" class="carousel slide" data-bs-ride="false">
+                    <div id="headcoursel" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#headcoursel" data-bs-slide-to="0" class="active"
                                 aria-current="true" aria-label="Slide 1"></button>
@@ -15,22 +15,25 @@
                                 aria-label="Slide 2"></button>
                         </div>
                         <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="{{ asset('BRAND.png') }}" class="d-block w-100" alt="...">
+                            <div class="carousel-item active" data-bs-interval="5000">
+                                <img src="{{ asset('test.png') }}" class="d-block w-100"
+                                    style="height: 500px; object-fit: contain;" alt="...">
                                 {{-- <div class="carousel-caption d-none d-md-block">
                                     <h5>First slide label</h5>
                                     <p>Some representative placeholder content for the first slide.</p>
                                 </div> --}}
                             </div>
-                            <div class="carousel-item">
-                                <img src="{{ asset('BRAND.png') }}" class="d-block w-100" alt="...">
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="{{ asset('BRAND.png') }}" class="d-block w-100"
+                                    style="height: 500px; object-fit: contain;" alt="...">
                                 {{-- <div class="carousel-caption d-none d-md-block">
                                     <h5>Second slide label</h5>
                                     <p>Some representative placeholder content for the second slide.</p>
                                 </div> --}}
                             </div>
-                            <div class="carousel-item">
-                                <img src="{{ asset('BRAND.png') }}" class="d-block w-100" alt="...">
+                            <div class="carousel-item" data-bs-interval="5000">
+                                <img src="{{ asset('BRAND.png') }}" class="d-block w-100"
+                                    style="height: 500px; object-fit: contain;" alt="...">
                                 {{-- <div class="carousel-caption d-none d-md-block">
                                     <h5>Third slide label</h5>
                                     <p>Some representative placeholder content for the third slide.</p>
@@ -199,7 +202,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <a href="{{route('contact')}}" class="btn btn-danger">CONTACT US NOW <i
+                        <a href="{{ route('contact') }}" class="btn btn-danger">CONTACT US NOW <i
                                 class="bi bi-envelope"></i></a>
                     </div>
                 </div>
@@ -219,6 +222,8 @@
                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
                             <div class="custom-block bg-white shadow-lg">
                                 <a href="{{ route('showArticle', $article->id) }}">
+                                    <img src="{{ asset('ArtikelImages/' . $article->thumbnail) }}"
+                                        class="custom-block-image img-fluid rounded-3 pb-3" alt="">
                                     <div class="d-flex">
                                         <div>
                                             <h5 class="mb-2">{{ $article->title }}</h5>
@@ -227,8 +232,6 @@
                                             </p>
                                         </div>
                                     </div>
-                                    <img src="{{ asset('ArtikelImages/' . $article->thumbnail) }}"
-                                        class="custom-block-image img-fluid" alt="">
                                 </a>
                             </div>
                         </div>

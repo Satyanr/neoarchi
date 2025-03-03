@@ -3,19 +3,76 @@
 @section('content')
     <header class="site-header d-flex flex-column justify-content-center align-items-center">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row">
+                <div class="col">
+                    <h2 class="text-white">{{ $project->name }}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="text-white">{{ $project->created_at->format('d F Y') }}</p>
+                </div>
+            </div>
+            <div class="row mt-3 align-items-center">
                 <div class="col text-center">
-                    <img src="{{ asset('ProjectImages/' . $project->thumbnail) }}" class="img-fluid" style="max-width: 500px"
-                        alt="...">
+                    <img src="{{ asset('ProjectImages/' . $project->thumbnail) }}" class="img-fluid w-100"
+                        style="max-width: 500px" alt="...">
                 </div>
             </div>
         </div>
     </header>
-    <div class="container">
+    <div class="container bg-white">
         <div class="row">
             <div class="col-12">
-                <h2>{{ $project->name }}</h2>
                 <p>{!! $project->description !!}</p>
+            </div>
+        </div>
+    </div>
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col">
+                <h3>Recent News</h3>
+            </div>
+        </div>
+        <div class="row">
+            @foreach ($artikels as $article)
+                <div class="col-lg-3 col-md-6 col-12 my-4 mb-lg-0">
+                    <div class="card p-3 h-100">
+                        <a href="{{ route('showArticle', $article->id) }}">
+                            <img src="{{ asset('ArtikelImages/' . $article->thumbnail) }}"
+                                class="custom-block-image img-fluid mb-2 rounded-3" alt="">
+                            <div class="d-flex h-100">
+                                <h5 class="mb-2">{{ $article->title }}</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col">
+                <h3>Recent Projects</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    @foreach ($projects as $projek)
+                        <div class="col-lg-6 col-md-6 col-12 my-4 mb-lg-0">
+                            <div class="card text-bg-dark">
+                                <a href="{{ route('showProject', $projek->id) }}">
+                                    <img src="{{ asset('ProjectImages/' . $projek->thumbnail) }}" class="card-img"
+                                        style="height: 300px; object-fit: cover;">
+                                    <div class="card-img-overlay">
+                                        <h5 class="card-title bg-white bg-opacity-50 px-3">{{ $projek->name }}</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </div>
     </div>

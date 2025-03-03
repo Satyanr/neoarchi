@@ -17,6 +17,7 @@
 
                 <div class="col-lg-6 col-12">
                     <form action="#" method="post" class="custom-form contact-form" role="form">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="form-floating">

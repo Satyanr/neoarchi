@@ -53,7 +53,7 @@ class ArtikelKomponent extends Component
         ]);
     }
 
-    public function satusArtikel($id)
+    public function statusArtikel($id)
     {
         $id = Crypt::decrypt($id);
         $artikel = Article::find($id);

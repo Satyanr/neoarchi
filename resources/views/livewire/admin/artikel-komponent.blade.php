@@ -82,7 +82,7 @@
                                                         wire:confirm="Hapus data ini ?">Hapus</a></li>
                                                 <li>
                                                     <a href="javascript:void(0)" class="dropdown-item"
-                                                        wire:click.prevent="satusArtikel('{{ Crypt::encrypt($artikel->id) }}')">
+                                                        wire:click.prevent="statusArtikel('{{ Crypt::encrypt($artikel->id) }}')">
                                                         Ubah Status
                                                     </a>
                                                 </li>

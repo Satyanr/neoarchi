@@ -47,6 +47,15 @@ class ProjekKomponent extends Component
         ]);
     }
 
+    public function statusProject($id)
+    {
+        $id = Crypt::decrypt($id);
+        $project = Project::find($id);
+        $project->status = $project->status === 'draft' ? 'published' : 'draft';
+        $project->save();
+        session()->flash('message', 'Status Projek berhasil diupdate');
+    }
+
     // public function storeProject()
     // {
     //     $this->validate(

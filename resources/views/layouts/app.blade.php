@@ -28,6 +28,7 @@
     <link href="{{ asset('asset-main/css/bootstrap-icons.css') }}" rel="stylesheet">
 
     <link href="{{ asset('asset-main/css/templatemo-topic-listing.css') }}" rel="stylesheet">
+    @stack('styles')
 </head>
 
 <body>

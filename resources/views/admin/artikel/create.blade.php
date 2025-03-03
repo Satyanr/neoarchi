@@ -12,6 +12,11 @@
     <div class="container">
         <div class="row">
             <div class="col">
+                <h1>Tambah Artikel</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
                 @if (session()->has('message'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{ session('message') }}
@@ -65,6 +70,7 @@
                     </div>
                     <div class="input-group mb-3">
                         <button class="btn btn-primary" type="submit">Tambah</button>
+                        <a href="{{route('admin.artikel')}}" class="btn btn-secondary">Batal</a>
                     </div>
                 </form>
             </div>

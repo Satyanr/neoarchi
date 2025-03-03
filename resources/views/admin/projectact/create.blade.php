@@ -12,6 +12,31 @@
     <div class="container">
         <div class="row">
             <div class="col">
+                <h1>Tambah Projek</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                @if (session()->has('message'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('message') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+                @if ($errors->any())
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
                 <form action="{{ route('admin.projek.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
@@ -42,6 +67,7 @@
                     </div>
                     <div class="input-group mb-3">
                         <button class="btn btn-primary" type="submit">Tambah</button>
+                        <a href="{{route('admin.projek')}}" class="btn btn-secondary">Batal</a>
                     </div>
                 </form>
             </div>

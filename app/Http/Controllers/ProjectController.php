@@ -47,7 +47,6 @@ class ProjectController extends Controller
             'name' => 'required',
             'description' => 'required',
             'category' => 'required',
-            'location' => 'required',
             'thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
@@ -65,7 +64,6 @@ class ProjectController extends Controller
         $project->slug = Str::slug($request->name);
         $project->description = $request->description;
         $project->category = $request->category;
-        $project->location = $request->location;
         $project->save();
 
         return redirect()->route('admin.projek')->with('success', 'project berhasil diubah.');

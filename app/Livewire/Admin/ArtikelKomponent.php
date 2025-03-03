@@ -53,6 +53,15 @@ class ArtikelKomponent extends Component
         ]);
     }
 
+    public function satusArtikel($id)
+    {
+        $id = Crypt::decrypt($id);
+        $artikel = Article::find($id);
+        $artikel->status = $artikel->status === 'draft' ? 'published' : 'draft';
+        $artikel->save();
+        session()->flash('message', 'Status Artikel berhasil diupdate');
+    }
+
     // public function storeArtikel()
     // {
     //     $this->validate(

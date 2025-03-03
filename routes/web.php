@@ -35,18 +35,14 @@ Route::prefix('/admin')->group(function () {
     Route::controller(ArtikelController::class)->group(function () {
         Route::get('/artikel/show', 'index')->name('admin.artikel.show');
         Route::post('/artikel/store', 'store')->name('admin.artikel.store');
-        // Route::get('/artikel/{id}', [ArtikelController::class, 'show'])->name('admin.artikel.show');
-        // Route::get('/artikel/{id}/edit', [ArtikelController::class, 'edit'])->name('admin.artikel.edit');
-        // Route::put('/artikel/{id}', [ArtikelController::class, 'update'])->name('admin.artikel.update');
-        // Route::delete('/artikel/{id}', [ArtikelController::class, 'destroy'])->name('admin.artikel.destroy');
+        Route::get('/artikel/{id}','edit')->name('admin.artikel.edit');
+        Route::get('/artikel/{id}/update', 'update')->name('admin.artikel.update');
     });
     Route::controller(ProjectController::class)->group(function () {
         Route::get('/projek/show', 'index')->name('admin.projek.show');
         Route::post('/projek/store', 'store')->name('admin.projek.store');
-        // Route::get('/projek/{id}', [ProjectController::class, 'show'])->name('admin.projek.show');
-        // Route::get('/projek/{id}/edit', [ProjectController::class, 'edit'])->name('admin.projek.edit');
-        // Route::put('/projek/{id}', [ProjectController::class, 'update'])->name('admin.projek.update');
-        // Route::delete('/projek/{id}', [ProjectController::class, 'destroy'])->name('admin.projek.destroy');
+        Route::get('/projek/{id}','edit')->name('admin.projek.edit');
+        Route::get('/projek/{id}/update', 'update')->name('admin.projek.update');
     });
     Route::controller(HomeController::class)->group(function () {
         Route::get('/','index')->name('admin');

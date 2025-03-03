@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Support\Str;
 use App\Models\CategoryLink;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class ArtikelController extends Controller
 {
@@ -54,6 +55,7 @@ class ArtikelController extends Controller
 
     public function edit($id)
     {
+        $id = Crypt::decrypt($id);
         $artikel = Article::find($id);
         $categories = Category::all();
         $catlink = CategoryLink::where('article_id', $id)->first();
@@ -62,6 +64,7 @@ class ArtikelController extends Controller
 
     public function update(Request $request, $id)
     {
+        $id = Crypt::decrypt($id);
         $request->validate([
             'title' => 'required',
             'content' => 'required',

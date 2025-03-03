@@ -36,13 +36,13 @@ Route::prefix('/admin')->group(function () {
         Route::get('/artikel/show', 'index')->name('admin.artikel.show');
         Route::post('/artikel/store', 'store')->name('admin.artikel.store');
         Route::get('/artikel/{id}','edit')->name('admin.artikel.edit');
-        Route::get('/artikel/{id}/update', 'update')->name('admin.artikel.update');
+        Route::patch('/artikel/{id}/update', 'update')->name('admin.artikel.update');
     });
     Route::controller(ProjectController::class)->group(function () {
         Route::get('/projek/show', 'index')->name('admin.projek.show');
         Route::post('/projek/store', 'store')->name('admin.projek.store');
         Route::get('/projek/{id}','edit')->name('admin.projek.edit');
-        Route::get('/projek/{id}/update', 'update')->name('admin.projek.update');
+        Route::patch('/projek/{id}/update', 'update')->name('admin.projek.update');
     });
     Route::controller(HomeController::class)->group(function () {
         Route::get('/','index')->name('admin');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class ProjectController extends Controller
 {
@@ -37,12 +38,14 @@ class ProjectController extends Controller
 
     public function edit($id)
     {
+        $id = Crypt::decrypt($id);
         $project = Project::find($id);
         return view('admin.projectact.edit', compact('project'));
     }
 
     public function update(Request $request, $id)
     {
+        $id = Crypt::decrypt($id);
         $request->validate([
             'name' => 'required',
             'description' => 'required',

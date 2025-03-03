@@ -73,6 +73,7 @@ class ArtikelController extends Controller
         $artikel = Article::find($id);
         $artikel->title = $request->title;
         $artikel->slug = Str::slug($request->title);
+        $artikel->description = $request->description;
         $artikel->content = $request->content;
         if ($request->gambar) {
             $request->validate([

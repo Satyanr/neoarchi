@@ -43,6 +43,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Gambar</th>
                                 <th>Nama</th>
                                 <th>Status</th>
                                 <th>Option</th>
@@ -52,12 +53,16 @@
                             @foreach ($artikels as $artikel)
                                 <tr>
                                     <td>{{ $loop->index + 1 + 10 * ($artikels->currentPage() - 1) }}</td>
+                                    <td>
+                                        <img src="{{ asset('ArtikelImages/' . $artikel->thumbnail) }}" alt="{{ $artikel->title }}"
+                                            width="100">
+                                    </td>
                                     <td>{{ $artikel->title }}</td>
                                     <td>{{ $artikel->status }}</td>
                                     <td>
                                         <div class="btn-group dropend">
-                                            <a class="dropdown-toggle-no-caret" data-bs-toggle="dropdown"
-                                                aria-expanded="true">
+                                            <a href="javascript:void(0)" class="dropdown-toggle-no-caret"
+                                                data-bs-toggle="dropdown" aria-expanded="true">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -72,11 +77,11 @@
                                                 <li><a class="dropdown-item"
                                                         href="{{ route('admin.artikel.edit', ['id' => Crypt::encrypt($artikel->id)]) }}">Edit</a>
                                                 </li>
-                                                <li><a class="dropdown-item"
+                                                <li><a href="javascript:void(0)" class="dropdown-item"
                                                         wire:click.prevent="destroyartikel('{{ Crypt::encrypt($artikel->id) }}')"
                                                         wire:confirm="Hapus data ini ?">Hapus</a></li>
                                                 <li>
-                                                    <a class="dropdown-item"
+                                                    <a href="javascript:void(0)" class="dropdown-item"
                                                         wire:click.prevent="satusArtikel('{{ Crypt::encrypt($artikel->id) }}')">
                                                         Ubah Status
                                                     </a>

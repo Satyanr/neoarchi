@@ -78,7 +78,7 @@
 @push('script')
     <script>
         $('#summernote').summernote({
-            placeholder: 'Hello stand alone ui',
+            placeholder: 'Deskripsi Projek',
             tabsize: 2,
             height: 120,
             toolbar: [

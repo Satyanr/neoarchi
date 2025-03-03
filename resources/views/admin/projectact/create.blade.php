@@ -9,43 +9,41 @@
 @endpush
 
 @section('content')
-    <div class="row">
-        <div class="col">
-            <div class="row">
-                <div class="col">
-                    <form action="{{ route('admin.projek.store') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="row">
-                            <div class="col">
-                                <label class="form-label">Judul</label>
-                                <input type="text" class="form-control" name="name" placeholder="Nama artikel"
-                                    aria-label="Nama artikel" aria-describedby="basic-addon2">
-                            </div>
-                            <div class="col">
-                                <label for="formFile" class="form-label">Input Gambar</label>
-                                <input class="form-control" type="file" id="formFile" name="gambar">
-                            </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form action="{{ route('admin.projek.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="row">
+                        <div class="col">
+                            <label class="form-label">Judul</label>
+                            <input type="text" class="form-control" required name="name" placeholder="Nama artikel"
+                                aria-label="Nama artikel" aria-describedby="basic-addon2">
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <select class="form-select" aria-label="Default select example" name="category">
-                                    <option selected>Pilih Kategori</option>
-                                    <option value="conventional-media">Conventional Media</option>
-                                    <option value="indoor-media">Indoor Media</option>
-                                    <option value="outdoor-media">Outdoor Media</option>
-                                </select>
-                            </div>
+                        <div class="col">
+                            <label for="formFile" class="form-label">Input Gambar</label>
+                            <input class="form-control" type="file" id="formFile" required name="gambar">
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <textarea id="summernote" name="description"></textarea>
-                            </div>
+                    </div>
+                    <div class="row py-3">
+                        <div class="col">
+                            <select class="form-select" aria-label="Default select example" required name="category">
+                                <option selected>Pilih Kategori</option>
+                                <option value="conventional-media">Conventional Media</option>
+                                <option value="indoor-media">Indoor Media</option>
+                                <option value="outdoor-media">Outdoor Media</option>
+                            </select>
                         </div>
-                        <div class="input-group mb-3">
-                            <button class="btn btn-primary" type="submit">Tambah</button>
+                    </div>
+                    <div class="row pb-1">
+                        <div class="col">
+                            <textarea id="summernote" required name="description"></textarea>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <button class="btn btn-primary" type="submit">Tambah</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

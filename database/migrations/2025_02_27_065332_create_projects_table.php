@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('thumbnail')->nullable();
             $table->enum('status', ['draft', 'published'])->default('draft');
             $table->string('category')->nullable();
+            $table->string('location')->nullable();
             $table->foreignId('user_id')->nullable()->constrained();
             $table->timestamps();
         });

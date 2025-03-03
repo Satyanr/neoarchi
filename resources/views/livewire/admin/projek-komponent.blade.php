@@ -25,16 +25,24 @@
                 <div class="col-auto px-3">
                     <h4>Project</h4>
                 </div>
-                <div class="col d-flex justify-content-end">
+                <div class="col-md d-flex justify-content-end">
                     <div class="input-group mb-3 w-75">
-                        <span class="input-group-text" id="basic-addon1"><i
-                                class="fa-solid fa-magnifying-glass"></i></span>
+                        <span class="input-group-text" id="basic-addon1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="icon icon-tabler icons-tabler-outline icon-tabler-search">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                <path d="M21 21l-6 -6" />
+                            </svg>
+                        </span>
                         <input type="text" class="form-control" placeholder="Cari Project" aria-label="Cari Project"
                             aria-describedby="basic-addon1" wire:model='searchProject' wire:input='resetProjectPage'>
                     </div>
                 </div>
-                <div class="col">
-                    <a href="{{ route('admin.projek.show') }}">Tambah</a>
+                <div class="col-auto">
+                    <a href="{{ route('admin.projek.show') }}" class="btn btn-primary">Tambah</a>
                 </div>
             </div>
             <div class="row">
@@ -54,8 +62,8 @@
                                 <tr>
                                     <td>{{ $loop->index + 1 + 10 * ($projects->currentPage() - 1) }}</td>
                                     <td>
-                                        <img src="{{ asset('ProjectImages/' . $project->thumbnail) }}" alt="{{ $project->name }}"
-                                            width="100">
+                                        <img src="{{ asset('ProjectImages/' . $project->thumbnail) }}"
+                                            alt="{{ $project->name }}" width="100">
                                     </td>
                                     <td>{{ $project->name }}</td>
                                     <td>{{ $project->status }}</td>
@@ -80,7 +88,7 @@
                                                 <li><a href="javascript:void(0)" class="dropdown-item"
                                                         wire:click.prevent="destroyProject('{{ Crypt::encrypt($project->id) }}')"
                                                         wire:confirm="Hapus data ini ?">Hapus</a>
-                                                    </li>
+                                                </li>
                                                 <li>
                                                     <a href="javascript:void(0)" class="dropdown-item"
                                                         wire:click.prevent="statusProject('{{ Crypt::encrypt($project->id) }}')">

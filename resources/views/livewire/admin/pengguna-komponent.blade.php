@@ -1,27 +1,26 @@
 <div>
-    <div class="row mb-5 justify-content-between">
-        <div class="col ms-3">
-            <div class="row">
-                <div class="col-auto">
-                    <h3>Daftar Pengguna </h3>
-                </div>
-                <div class="col-1 text-center">
-                    <a href="javascript:void(0)" class="btn btn-outline-success border-0" data-bs-toggle="modal"
-                        data-bs-target="#ModalAkun">
-                        <b>
-                            <i class="fa-solid fa-user-plus"></i> <br>
-                            <small>Tambahkan</small>
-                        </b>
-                    </a>
-                </div>
-            </div>
+    <div class="row justify-content-between">
+        <div class="col-auto px-3">
+            <h4>Pengguna</h4>
         </div>
-        <div class="col-auto">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <div class="col-md d-flex justify-content-end">
+            <div class="input-group mb-3 w-75">
+                <span class="input-group-text" id="basic-addon1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-search">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                        <path d="M21 21l-6 -6" />
+                    </svg>
+                </span>
                 <input type="text" class="form-control" placeholder="Cari User" aria-label="Cari User"
                     aria-describedby="basic-addon1" wire:model='searchuser' wire:input='resetPage'>
             </div>
+        </div>
+        <div class="col-auto">
+            <a href="javascript:void(0)" class="btn btn-success" data-bs-toggle="modal"
+                data-bs-target="#ModalAkun">Tambah</a>
         </div>
     </div>
     @if (session()->has('message'))
@@ -51,18 +50,22 @@
                             <td>{{ $pengguna->role }}</td>
                             <td>
                                 <div class="btn-group dropend">
-                                    <button type="button" class="btn btn-outline-dark dropdown-toggle border-0"
+                                    <a href="javascript:void(0)" class="dropdown-toggle-no-caret border-0"
                                         data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    </button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="icon icon-tabler icons-tabler-outline icon-tabler-dots-vertical">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                                            <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                                            <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+                                        </svg>
+                                    </a>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="javascript:void(0)" data-bs-toggle="modal"
                                                 data-bs-target="#ModalAkun"
                                                 wire:click='edit({{ $pengguna->id }})'>Edit</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item text-success"
-                                                href="{{ route('admin.impersonate', $pengguna) }}">Masuk</a>
                                         </li>
                                         <li><a class="dropdown-item text-danger" href="javascript:void(0)"
                                                 wire:click.prevent="delete({{ $pengguna->id }})">Hapus</a></li>
@@ -92,9 +95,6 @@
                         @else
                             <h4 class="modal-title" id="myModalLabel">Tambahkan Akun</h4>
                         @endif
-                        <button type="button" class="close" data-dismiss="modal"
-                            wire:click.prevent='cancel()'><span>&times;</span>
-                        </button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">

@@ -41,7 +41,7 @@
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" placeholder="Nama Kategori"
                                 aria-label="Nama Kategori" aria-describedby="basic-addon2" wire:model='nama_kategori'>
-                            <button class="btn btn-primary" type="submit">Tambah</button>
+                            <button class="btn btn-success" type="submit">Tambah</button>
                         </div>
                     </form>
                 </div>

@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="col-auto">
-                    <a href="{{ route('admin.projek.show') }}" class="btn btn-primary">Tambah</a>
+                    <a href="{{ route('admin.projek.show') }}" class="btn btn-success">Tambah</a>
                 </div>
             </div>
             <div class="row">

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{ route('admin') }}">
             <img src="{{asset('BRAND.png')}}" width="100px" class="image-fluid" alt="">
         </a>
 

@@ -1,0 +1,5 @@
+---
+deployment:
+tasks:
+- export DEPLOYPATH=/home/secg5217/public_html/neoarchi.securepage.my.id
+- /bin/cp -r * $DEPLOYPATH
